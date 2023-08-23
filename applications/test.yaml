@@ -6,7 +6,6 @@ spec:
   destination:
     name: pibox
     namespace: nas
-    server: ''
   source:
     repoURL: 'https://two-tauers.github.io/helm-charts'
     targetRevision: 0.2.0
