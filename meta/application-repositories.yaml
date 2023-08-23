@@ -16,3 +16,7 @@ spec:
       recurse: true
       include: '*.yaml'
   project: meta
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
