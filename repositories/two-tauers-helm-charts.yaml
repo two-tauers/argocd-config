@@ -8,4 +8,4 @@ metadata:
     argocd.argoproj.io/secret-type: repository
 stringData:
   type: helm
-  url: https://github.com/two-tauers/helm-charts
+  url: https://two-tauers.github.io/helm-charts

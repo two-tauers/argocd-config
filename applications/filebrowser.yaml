@@ -9,7 +9,7 @@ spec:
     server: ''
   source:
     path: ''
-    repoURL: 'https://github.com/two-tauers/helm-charts'
+    repoURL: 'https://two-tauers.github.io/helm-charts'
     targetRevision: 0.2.0
     chart: filebrowser
     helm:

@@ -17,5 +17,6 @@ spec:
     - group: '*'
       kind: '*'
   sourceRepos:
-    - 'https://github.com/two-tauers/argocd-config'
+    - https://github.com/two-tauers/argocd-config
+    - https://two-tauers.github.io/helm-charts
 status: {}
