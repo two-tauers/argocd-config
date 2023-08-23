@@ -8,7 +8,7 @@ spec:
     namespace: nas
   source:
     repoURL: 'https://two-tauers.github.io/helm-charts'
-    targetRevision: 0.2.0
+    targetRevision: 0.2.1
     chart: filebrowser
     helm:
       releaseName: filebrowser
