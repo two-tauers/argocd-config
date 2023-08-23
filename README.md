@@ -50,14 +50,19 @@ kubectl apply -f meta
 
 ## Accessing server UI & API
 
-There is no ingress, so just port-forward the service to localhost:
+It is useful to see the status in the UI, but access to `argocd-server` is also required to manage the server using the [CLI tool](https://github.com/argoproj/argo-cd/releases).
+
+To access it, create the simple ingress in this repo:
+
+```bash
+kubectl apply -f ingress.yaml
+```
+
+Or just port-forward the service to localhost:
 
 ```bash
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
-
-This is also required to manage the server using the [CLI tool](https://github.com/argoproj/argo-cd/releases).
-
 
 To get the initial password for `admin` user:
 
