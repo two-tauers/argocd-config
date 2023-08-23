@@ -15,9 +15,10 @@ spec:
       values: |
         filebrowser:
           sharePath: /tmp
+        service:
+          port: 80
         ingress:
           baseURL: "/files"
-
   project: nas
   syncPolicy:
     automated:
