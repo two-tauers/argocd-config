@@ -1,0 +1,20 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-projects
+  namespace: argocd
+spec:
+  destination:
+    name: ''
+    namespace: argocd
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: projects
+    repoURL: 'https://github.com/two-tauers/argocd-config'
+    targetRevision: HEAD
+    directory:
+      recurse: true
+      include: '*.yaml'
+  sources: []
+  project: meta
