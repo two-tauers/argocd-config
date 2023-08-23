@@ -10,12 +10,10 @@ spec:
       kind: '*'
   description: ArgoCD meta-project for managing itself
   destinations:
-    - name: ''
-      namespace: argocd
+    - namespace: argocd
       server: 'https://kubernetes.default.svc'
   namespaceResourceWhitelist:
     - group: '*'
       kind: '*'
   sourceRepos:
     - https://github.com/two-tauers/argocd-config
-status: {}

@@ -6,7 +6,6 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    name: ''
     namespace: argocd
     server: 'https://kubernetes.default.svc'
   source:
@@ -16,5 +15,4 @@ spec:
     directory:
       recurse: true
       include: '*.yaml'
-  sources: []
   project: meta
