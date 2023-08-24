@@ -8,13 +8,14 @@ spec:
     namespace: nas
   source:
     repoURL: 'https://two-tauers.github.io/helm-charts'
-    targetRevision: 0.1.1
+    targetRevision: 0.2.0
     chart: samba
     helm:
       releaseName: samba
       values: |
         samba:
-          sharePath: /mnt/nas
+          userSecret:
+            create: false #to be created manually
   project: nas
   syncPolicy:
     automated:
