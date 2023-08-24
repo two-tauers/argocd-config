@@ -15,3 +15,16 @@ spec:
                 name: argocd-server
                 port:
                   number: 80
+
+### NOTE
+# To use this ingress, you need to allow argocd-server
+# to run in an insecure mode. Add `--insecure` arg
+# to the container:
+# ```yaml
+# ...
+#      containers:
+#       - args:
+#         - /usr/local/bin/argocd-server
+#         - --insecure
+# ...
+# ```
