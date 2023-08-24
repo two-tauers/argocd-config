@@ -2,21 +2,22 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: samba
+  name: rsync
 spec:
   destination:
     name: pibox
     namespace: nas
   source:
     repoURL: 'https://two-tauers.github.io/helm-charts'
-    targetRevision: 0.2.1
-    chart: samba
+    targetRevision: 0.1.1
+    chart: rsync
     helm:
-      releaseName: samba
+      releaseName: rsync
       values: |
-        samba:
-          userSecret:
-            create: false #to be created manually
+        rsync:
+          sourcePath: /mnt/nas
+          targetPath: /mnt/nas-backup
+          cron: "0 * * * *"
   project: nas
   syncPolicy:
     automated:
