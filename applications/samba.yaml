@@ -1,24 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: filebrowser
+  name: samba
 spec:
   destination:
     name: pibox
     namespace: nas
   source:
     repoURL: 'https://two-tauers.github.io/helm-charts'
-    targetRevision: 0.2.1
-    chart: filebrowser
+    targetRevision: 0.1.1
+    chart: samba
     helm:
-      releaseName: filebrowser
+      releaseName: samba
       values: |
-        filebrowser:
-          sharePath: /tmp
-        service:
-          port: 80
-        ingress:
-          baseURL: "/files"
+        samba:
+          sharePath: /mnt/nas
   project: nas
   syncPolicy:
     automated:
