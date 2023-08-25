@@ -1,0 +1,29 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: filebrowser
+spec:
+  destination:
+    name: pibox
+    namespace: nas
+  source:
+    repoURL: 'https://two-tauers.github.io/helm-charts'
+    targetRevision: 0.2.2
+    chart: filebrowser
+    helm:
+      releaseName: filebrowser
+      values: |
+        filebrowser:
+          sharePath: /mnt/nas
+        ingress:
+          enable: true
+          baseURL: "/browse"
+          host: "pibox.local"
+  project: nas
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
