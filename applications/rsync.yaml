@@ -9,7 +9,7 @@ spec:
     namespace: nas
   source:
     repoURL: 'https://two-tauers.github.io/helm-charts'
-    targetRevision: 0.1.1
+    targetRevision: 0.1.2
     chart: rsync
     helm:
       releaseName: rsync
