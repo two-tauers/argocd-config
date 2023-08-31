@@ -1,0 +1,27 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: calibre-web-library
+  namespace: calibre
+  labels:
+    type: local
+spec:
+  storageClassName: ""
+  volumeMode: Filesystem
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  local:
+    path: /mnt/nas/.appdata/calibre-web/library
+  persistentVolumeReclaimPolicy: Retain
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+          - key: two-tauers.github.io/role
+            operator: In
+            values:
+              - nas
+
