@@ -3,7 +3,7 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: calibre-web-library
-  namespace: calibre
+  namespace: local-services
   labels:
     type: local
 spec:
@@ -29,7 +29,7 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: calibre-web-config
-  namespace: calibre
+  namespace: local-services
   labels:
     type: local
 spec:
