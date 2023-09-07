@@ -70,6 +70,11 @@ To get the initial password for `admin` user:
 kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath='{.data.password}' | base64 --decode
 ```
 
+> NOTE: If you don't have TLS set up, you need to make the server run in an insecure mode:
+> ```bash
+> kubectl patch deployment/argocd-server -n argocd -p '{"spec":{"template":{"spec":{"containers": [{"name": "argocd-server", "args":["/usr/local/bin/argocd-server", "--insecure"]}]}}}}'
+> ```
+
 ## ArgoCD CLI tool
 
 

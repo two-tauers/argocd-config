@@ -16,7 +16,9 @@ spec:
       values: |
         samba:
           userSecret:
-            create: false #to be created manually
+            # to be created manually
+            # kubectl create secret generic samba-secret -n nas --from-literal=USER1=<username>:<password>
+            create: false 
   project: nas
   syncPolicy:
     automated:
