@@ -35,6 +35,9 @@ spec:
               accessModes:
                 - ReadWriteOnce
               volumeName: calibre-web-library
+              resources:
+                requests:
+                  storage: 10Gi
           - apiVersion: v1
             kind: PersistentVolumeClaim
             metadata:
@@ -44,6 +47,9 @@ spec:
               accessModes:
                 - ReadWriteOnce
               volumeName: calibre-web-config
+              resources:
+                requests:
+                  storage: 1Gi
 
   project: local-services
   syncPolicy:
