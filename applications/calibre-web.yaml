@@ -1,0 +1,54 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: calibre-web
+spec:
+  destination:
+    name: pibox
+    namespace: local-services
+  source:
+    repoURL: 'https://two-tauers.github.io/helm-charts'
+    targetRevision: 0.1.0
+    chart: calibre-web
+    helm:
+      releaseName: calibre-web
+      valuesObject:
+
+        pvc:
+          config: calibre-web-config
+          library: calibre-web-library
+        ingress:
+          enabled: true
+          hosts:
+            - host: pibox.local
+              paths:
+                - path: /
+                  pathType: ImplementationSpecific
+        extraManifests:
+          - apiVersion: v1
+            kind: PersistentVolumeClaim
+            metadata:
+              name: calibre-web-library
+            spec:
+              storageClassName: ""
+              accessModes:
+                - ReadWriteOnce
+              volumeName: calibre-web-library
+          - apiVersion: v1
+            kind: PersistentVolumeClaim
+            metadata:
+              name: calibre-web-config
+            spec:
+              storageClassName: ""
+              accessModes:
+                - ReadWriteOnce
+              volumeName: calibre-web-config
+
+  project: local-services
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
