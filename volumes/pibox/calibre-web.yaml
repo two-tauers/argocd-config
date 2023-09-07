@@ -24,4 +24,29 @@ spec:
             operator: In
             values:
               - nas
-
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: calibre-web-config
+  namespace: calibre
+  labels:
+    type: local
+spec:
+  storageClassName: ""
+  volumeMode: Filesystem
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  local:
+    path: /mnt/nas/.appdata/calibre-web/config
+  persistentVolumeReclaimPolicy: Retain
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+          - key: two-tauers.github.io/role
+            operator: In
+            values:
+              - nas

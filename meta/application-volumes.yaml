@@ -19,7 +19,7 @@ spec:
         namespace: argocd
         name: '{{cluster}}'
       source:
-        path: 'volumes/{{cluster}}'
+        path: './volumes/{{cluster}}/'
         repoURL: 'https://github.com/two-tauers/argocd-config'
         targetRevision: HEAD
         directory:

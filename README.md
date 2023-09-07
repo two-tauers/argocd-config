@@ -70,8 +70,25 @@ To get the initial password for `admin` user:
 kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath='{.data.password}' | base64 --decode
 ```
 
-Or, using the CLI tool:
+## ArgoCD CLI tool
+
+
+
+## Add external cluster
+
+Additional clusters are added using ArgoCD CLI (see section above).
+
+Log in to the cluster ArgoCD runs in, e.g.:
 
 ```bash
-argocd admin initial-password -n argocd
+argocd login pibox.local:443
+```
+
+It will ask you whether you want to proceed insecurely if TLS is not set up,
+and prompt you for the username and password.
+
+To add a context to ArgoCD:
+
+```bash
+argocd cluster add two-tauers
 ```
