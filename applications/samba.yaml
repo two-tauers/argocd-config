@@ -17,7 +17,7 @@ spec:
         samba:
           userSecret:
             # to be created manually
-            # kubectl create secret generic samba-secret -n nas --from-literal=USER1=<username>:<password>
+            # kubectl create secret generic samba-users -n nas --from-literal='USER1=<username>;<password>'
             create: false 
   project: nas
   syncPolicy:
