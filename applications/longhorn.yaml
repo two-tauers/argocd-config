@@ -13,10 +13,11 @@ spec:
     chart: longhorn
     helm:
       releaseName: longhorn
-      values: |
-        
+      values: |        
         preUpgradeChecker:
           jobEnabled: false
+        defaultSettings:
+          defaultDataPath: /mnt/data
   project: storage
   syncPolicy:
     automated:
