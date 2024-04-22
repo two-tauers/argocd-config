@@ -14,8 +14,9 @@ spec:
     helm:
       releaseName: longhorn
       values: |
-        helmPreUpgradeCheckerJob:
-          enabled: false
+        
+        preUpgradeChecker:
+          jobEnabled: false
   project: storage
   syncPolicy:
     automated:
