@@ -2,21 +2,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
-  name: nas
-  namespace: argocd
+  name: storage
+  namespace: longhorn
 spec:
   clusterResourceWhitelist:
     - group: '*'
       kind: '*'
-  description: Samba and other nas-related apps
+  description: Storage system
   destinations:
-    - name: pibox
-      namespace: nas
+    - name: two-tauers
+      namespace: longhorn
       server: 'https://kubernetes.default.svc'
   namespaceResourceWhitelist:
     - group: '*'
       kind: '*'
   sourceRepos:
-    - https://github.com/two-tauers/argocd-config
-    - https://two-tauers.github.io/helm-charts
+    - https://charts.longhorn.io
 status: {}
