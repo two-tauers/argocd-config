@@ -7,14 +7,17 @@ spec:
   destination:
     name: two-tauers
     namespace: opentelemetry
-  source:
-    repoURL: "https://open-telemetry.github.io/opentelemetry-helm-charts"
-    targetRevision: 0.129.0
-    chart: opentelemetry-collector
-    helm:
-      releaseName: opentelemetry-collector
-      valueFiles:
-        - applications/opentelemetry-values.yaml
+  sources:
+    - repoURL: "https://open-telemetry.github.io/opentelemetry-helm-charts"
+      targetRevision: 0.129.0
+      chart: opentelemetry-collector
+      helm:
+        releaseName: opentelemetry-collector
+        valueFiles:
+          - $values/applications/opentelemetry-values.yaml
+    - repoURL: 'https://github.com/two-tauers/argocd-config'
+      targetRevision: HEAD
+      ref: values
   project: opentelemetry
   syncPolicy:
     automated:
