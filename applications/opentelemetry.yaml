@@ -1,6 +1,4 @@
 ---
-#helm repo add open-telemetry https://open-telemetry.github.io/opentelemetry-helm-charts
-
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -11,7 +9,7 @@ spec:
     namespace: opentelemetry
   source:
     repoURL: "https://open-telemetry.github.io/opentelemetry-helm-charts"
-    targetRevision: 0.130.0
+    targetRevision: 0.129.0
     chart: opentelemetry-collector
     helm:
       releaseName: opentelemetry-collector
