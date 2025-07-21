@@ -16,6 +16,6 @@ spec:
     - group: '*'
       kind: '*'
   sourceRepos:
-    - opentelemetry-helm-charts
-    - argocd-config
+    - https://open-telemetry.github.io/opentelemetry-helm-charts
+    - https://github.com/two-tauers/argocd-config
 status: {}
