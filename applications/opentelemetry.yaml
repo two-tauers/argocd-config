@@ -14,7 +14,7 @@ spec:
     helm:
       releaseName: opentelemetry-collector
       valueFiles:
-        - opentelemetry-values.yaml
+        - applications/opentelemetry-values.yaml
   project: opentelemetry
   syncPolicy:
     automated:
