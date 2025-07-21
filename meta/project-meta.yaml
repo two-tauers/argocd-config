@@ -11,11 +11,8 @@ spec:
   description: ArgoCD meta-project for managing itself
   destinations:
     - namespace: argocd
-      name: pibox
-      server: 'https://kubernetes.default.svc'
-    - namespace: argocd
       name: two-tauers
-      server: 'https://192.168.0.100:6443'
+      server: 'https://kubernetes.default.svc'
   namespaceResourceWhitelist:
     - group: '*'
       kind: '*'

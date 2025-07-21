@@ -8,7 +8,6 @@ spec:
   generators:
   - list:
       elements: # create an application per cluster
-        - cluster: pibox
         - cluster: two-tauers
   template:
     metadata:
@@ -16,8 +15,8 @@ spec:
       namespace: argocd
     spec:
       destination:
-        namespace: argocd
-        name: '{{cluster}}'
+      name: 'volumes-{{cluster}}'
+      namespace: argocd
       source:
         path: './volumes/{{cluster}}/'
         repoURL: 'https://github.com/two-tauers/argocd-config'
