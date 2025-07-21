@@ -17,5 +17,5 @@ spec:
     - group: '*'
       kind: '*'
   sourceRepos:
-    - https://charts.longhorn.io
+    - '*'
 status: {}
