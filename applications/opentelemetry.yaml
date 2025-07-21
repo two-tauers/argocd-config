@@ -11,7 +11,7 @@ spec:
     namespace: opentelemetry
   source:
     repoURL: "https://open-telemetry.github.io/opentelemetry-helm-charts"
-    targetRevision: 1.6.1
+    targetRevision: 0.130.0
     chart: opentelemetry-collector
     helm:
       releaseName: opentelemetry-collector
