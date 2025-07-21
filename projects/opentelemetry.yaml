@@ -8,7 +8,7 @@ spec:
   clusterResourceWhitelist:
     - group: '*'
       kind: '*'
-  description: Storage system
+  description: Opentelemetry collector gathering all relevant telemetry
   destinations:
     - name: two-tauers
       namespace: opentelemetry
