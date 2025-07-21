@@ -3,7 +3,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: opentelemetry
-  namespace: opentelemetry
+  namespace: argocd
 spec:
   clusterResourceWhitelist:
     - group: '*'
@@ -17,5 +17,5 @@ spec:
     - group: '*'
       kind: '*'
   sourceRepos:
-    - '*'
+    - https://open-telemetry.github.io/opentelemetry-helm-charts
 status: {}
