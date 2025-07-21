@@ -1,0 +1,21 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: opentelemetry
+  namespace: opentelemetry
+spec:
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  description: Storage system
+  destinations:
+    - name: two-tauers
+      namespace: opentelemetry
+      server: 'https://kubernetes.default.svc'
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  sourceRepos:
+    - https://charts.longhorn.io
+status: {}
