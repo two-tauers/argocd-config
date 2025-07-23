@@ -116,6 +116,7 @@ clusterRole:
   rules:
     # Taken from the k8sattributes preset
     - apiGroups:
+        - ""
         - apps
       resources:
         - pods
