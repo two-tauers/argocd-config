@@ -6,6 +6,9 @@ image:
 
 config:
   receivers:
+    hostmetrics: null
+    jaeger: null
+    otlp: null
     filelog:
       exclude: []
       include:
@@ -60,6 +63,8 @@ config:
         authenticator: basicauth/otlphttp
 
   extensions:
+    health_check:
+      endpoint: ${env:MY_POD_IP}:13133
     basicauth/otlp:
       client_auth:
         username: ${OTLP_USER}
