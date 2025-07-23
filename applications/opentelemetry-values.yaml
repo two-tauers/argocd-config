@@ -118,6 +118,7 @@ clusterRole:
     - apiGroups: [""]
       resources:
         - pods
+        - replicasets
         - namespaces
       verbs: ["get", "watch", "list"]
 
