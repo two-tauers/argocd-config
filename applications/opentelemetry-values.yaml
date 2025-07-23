@@ -67,6 +67,7 @@ config:
 
   service:
     extensions:
+      - healthcheck
       - basicauth/otlphttp
     pipelines:
       traces: null
