@@ -110,3 +110,13 @@ extraEnvs:
       secretKeyRef:
         name: grafana-otlp-ingest
         key: token
+
+clusterRole:
+  create: true
+  rules:
+    # Taken from the k8sattributes preset
+    - apiGroups: [""]
+      resources:
+        - pods
+        - namespaces
+      verbs: ["get", "watch", "list"]
