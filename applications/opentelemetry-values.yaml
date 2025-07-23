@@ -59,13 +59,15 @@ config:
       auth:
         authenticator: basicauth/otlphttp
 
-extensions:
-  basicauth/otlp:
-    client_auth:
-      username: ${OTLP_USER}
-      password: ${OTLP_TOKEN}
+  extensions:
+    basicauth/otlp:
+      client_auth:
+        username: ${OTLP_USER}
+        password: ${OTLP_TOKEN}
 
   service:
+    extensions:
+      - basicauth/otlphttp
     pipelines:
       traces: null
       metrics:
