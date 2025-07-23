@@ -115,7 +115,8 @@ clusterRole:
   create: true
   rules:
     # Taken from the k8sattributes preset
-    - apiGroups: [""]
+    - apiGroups:
+        - apps
       resources:
         - pods
         - replicasets
