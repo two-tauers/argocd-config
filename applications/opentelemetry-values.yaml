@@ -120,3 +120,19 @@ clusterRole:
         - pods
         - namespaces
       verbs: ["get", "watch", "list"]
+
+ports:
+  otlp:
+    enabled: true
+    containerPort: 4317
+    hostPort: 4317
+    protocol: TCP
+  otlp-http:
+    enabled: true
+    containerPort: 4318
+    protocol: TCP
+  metrics:
+    containerPort: 8888
+    enabled: true
+    servicePort: 8888
+    protocol: TCP
