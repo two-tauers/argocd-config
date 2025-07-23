@@ -75,25 +75,14 @@ kubectl get secret argocd-initial-admin-secret -n argocd -o jsonpath='{.data.pas
 > kubectl patch deployment/argocd-server -n argocd -p '{"spec":{"template":{"spec":{"containers": [{"name": "argocd-server", "args":["/usr/local/bin/argocd-server", "--insecure"]}]}}}}'
 > ```
 
-## ArgoCD CLI tool
+## Secrets management
 
-
-
-## Add external cluster
-
-Additional clusters are added using ArgoCD CLI (see section above).
-
-Log in to the cluster ArgoCD runs in, e.g.:
+There is no proper secrets management implemented for now.
+All secrets need to be created manually, e.g.
 
 ```bash
-argocd login pibox.local:443
-```
-
-It will ask you whether you want to proceed insecurely if TLS is not set up,
-and prompt you for the username and password.
-
-To add a context to ArgoCD:
-
-```bash
-argocd cluster add two-tauers
+kubectl create secret generic grafana-otlp-ingest -n opentelemetry \
+--from-literal=endpoint="https://otlp-gateway-prod-eu-north-0.grafana.net/otlp" \
+--from-literal=user="<OTLP_INSTANCE_ID" \
+--from-literal=token="<OTLP_TOKEN>"
 ```
