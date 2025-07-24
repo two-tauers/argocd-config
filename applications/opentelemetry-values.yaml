@@ -58,7 +58,7 @@ config:
                 action: keep
               - source_labels: [__address__]
                 target_label: __address__
-                replacement: $1:8082  # Replace 9102 with the actual pod's port for metrics
+                replacement: $1:8082
 
   processors:
     k8sattributes:
