@@ -57,8 +57,10 @@ config:
                 replacement: $1
                 action: keep
               - source_labels: [__address__]
-                target_label: __address__
+                action: replace
+                regex: ([^:]+):.*
                 replacement: $1:8082
+                target_label: __address__
 
   processors:
     k8sattributes:
