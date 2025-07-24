@@ -34,7 +34,7 @@ config:
                 selectors:
                   - role: pod
                     # only scrape data from pods running on the same node as collector
-                    field: 'spec.nodeName=${MY_NODE_NAME},spec.'
+                    field: 'spec.nodeName=${MY_NODE_NAME}'
             relabel_configs:
               - source_labels: [__address__]
                 action: replace
