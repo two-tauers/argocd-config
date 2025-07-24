@@ -24,16 +24,23 @@ config:
     prometheus:
       config:
         scrape_configs:
-          - job_name: 'otel-collector'
+          - job_name: 'opentelemetry'
             scrape_interval: 60s
             kubernetes_sd_configs:
               - role: pod
+                namespaces:
+                  names:
+                  - opentelemetry
                 selectors:
                   - role: pod
                     # only scrape data from pods running on the same node as collector
-                    field: 'spec.nodeName=${MY_NODE_NAME}'
-            static_configs:
-              - targets: ['0.0.0.0:8888']
+                    field: 'spec.nodeName=${MY_NODE_NAME},spec.'
+            relabel_configs:
+              - source_labels: [__address__]
+                action: replace
+                regex: ([^:]+):.*
+                replacement: $1:8888
+                target_label: __address__
 
   processors:
     k8sattributes:
