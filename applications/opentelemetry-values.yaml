@@ -24,7 +24,7 @@ config:
     prometheus:
       config:
         scrape_configs:
-          - job_name: 'opentelemetry'
+          - job_name: opentelemetry
             scrape_interval: 60s
             kubernetes_sd_configs:
               - role: pod
@@ -33,7 +33,6 @@ config:
                   - opentelemetry
                 selectors:
                   - role: pod
-                    # only scrape data from pods running on the same node as collector
                     field: 'spec.nodeName=${MY_NODE_NAME}'
             relabel_configs:
               - source_labels: [__address__]
@@ -41,6 +40,25 @@ config:
                 regex: ([^:]+):.*
                 replacement: $1:8888
                 target_label: __address__
+          - job_name: argocd
+            scrape_interval: 60s
+            kubernetes_sd_configs:
+              - role: pod
+                namespaces:
+                  names:
+                  - argocd
+                selectors:
+                  - role: pod
+                    field: 'spec.nodeName=${MY_NODE_NAME}'
+            relabel_configs:
+              - source_labels: [__meta_kubernetes_pod_name]
+                separator: ;
+                regex: 'argocd-server-.*'
+                replacement: $1
+                action: keep
+              - source_labels: [__address__]
+                target_label: __address__
+                replacement: $1:8082  # Replace 9102 with the actual pod's port for metrics
 
   processors:
     k8sattributes:
