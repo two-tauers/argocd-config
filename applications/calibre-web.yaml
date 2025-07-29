@@ -9,7 +9,7 @@ spec:
     namespace: services
   sources:
     - repoURL: "https://two-tauers.github.io/helm-charts"
-      targetRevision: 0.129.0
+      targetRevision: 0.1.1
       chart: calibre-web
       helm:
         releaseName: calibre-web
