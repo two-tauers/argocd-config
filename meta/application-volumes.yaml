@@ -15,8 +15,8 @@ spec:
       namespace: argocd
     spec:
       destination:
-      name: 'volumes-{{cluster}}'
-      namespace: argocd
+        name: 'volumes-{{cluster}}'
+        namespace: argocd
       source:
         path: './volumes/{{cluster}}/'
         repoURL: 'https://github.com/two-tauers/argocd-config'
