@@ -22,7 +22,7 @@ metadata:
 spec:
   storageClassName: ""
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   volumeName: calibre-web-library
   resources:
     requests:
