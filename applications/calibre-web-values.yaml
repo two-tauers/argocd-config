@@ -39,7 +39,7 @@ tolerations: []
 
 affinity: {}
 
-extraManifests: []
+extraManifests:
   - apiVersion: v1
     kind: PersistentVolumeClaim
     metadata:
