@@ -39,16 +39,7 @@ tolerations: []
 
 affinity: {}
 
-extraManifests:
-  - apiVersion: v1
-    kind: PersistentVolumeClaim
-    metadata:
-      name: calibre-web-library
-    spec:
-      storageClassName: ""
-      accessModes:
-        - ReadWriteOnce
-      volumeName: calibre-web-library
+extraManifests: []
 
 
 #[]

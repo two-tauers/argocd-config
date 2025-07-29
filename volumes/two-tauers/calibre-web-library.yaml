@@ -13,3 +13,17 @@ spec:
     path: /two-tauers/calibre-web-library
     server: pibox.local
     readOnly: false
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: calibre-web-library
+spec:
+  storageClassName: ""
+  accessModes:
+    - ReadWriteOnce
+  volumeName: calibre-web-library
+  resources:
+    requests:
+      storage: 800Gi
