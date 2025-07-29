@@ -15,7 +15,7 @@ spec:
       namespace: argocd
     spec:
       destination:
-        name: 'volumes-{{cluster}}'
+        name: '{{cluster}}'
         namespace: argocd
       source:
         path: './volumes/{{cluster}}/'

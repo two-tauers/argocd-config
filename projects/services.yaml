@@ -1,0 +1,21 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: services
+  namespace: argocd
+spec:
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  description: Useful services
+  destinations:
+    - name: two-tauers
+      namespace: services
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  sourceRepos:
+    - https://two-tauers.github.io/helm-charts
+    - https://github.com/two-tauers/argocd-config
+status: {}

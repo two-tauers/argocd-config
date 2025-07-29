@@ -1,0 +1,27 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: services
+spec:
+  destination:
+    name: two-tauers
+    namespace: services
+  sources:
+    - repoURL: "https://two-tauers.github.io/helm-charts"
+      targetRevision: 0.129.0
+      chart: calibre-web
+      helm:
+        releaseName: calibre-web
+        valueFiles:
+          - $values/applications/calibre-web-values.yaml
+    - repoURL: 'https://github.com/two-tauers/argocd-config'
+      targetRevision: HEAD
+      ref: values
+  project: services
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
