@@ -1,8 +1,6 @@
 ---
-
-
 pvc:
-  config: calibre-web-config
+  config: calibre-web-data
   library: calibre-web-library
 
 service:
