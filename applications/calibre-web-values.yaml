@@ -1,4 +1,12 @@
 ---
+env:
+  - name: PUID
+    value: "100"
+  - name: PGID
+    value: "101"
+  - name: TZ
+    value: "Europe/London"
+
 pvc:
   config: calibre-web-config
   library: calibre-web-library
