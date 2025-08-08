@@ -1,0 +1,29 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: calibre-web-config
+  namespace: services
+spec:
+  storageClassName: ""
+  accessModes:
+    - ReadWriteMany
+  volumeName: calibre-web-config
+  resources:
+    requests:
+      storage: 1Gi
+
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: calibre-web-library
+  namespace: services
+spec:
+  storageClassName: ""
+  accessModes:
+    - ReadWriteMany
+  volumeName: calibre-web-library
+  resources:
+    requests:
+      storage: 800Gi

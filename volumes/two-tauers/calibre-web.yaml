@@ -16,21 +16,6 @@ spec:
 
 ---
 apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: calibre-web-library
-  namespace: services
-spec:
-  storageClassName: ""
-  accessModes:
-    - ReadWriteMany
-  volumeName: calibre-web-library
-  resources:
-    requests:
-      storage: 800Gi
-
----
-apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: calibre-web-config
@@ -44,18 +29,3 @@ spec:
     path: /two-tauers/calibre-web-config
     server: pibox.local
     readOnly: false
-
----
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: calibre-web-config
-  namespace: services
-spec:
-  storageClassName: ""
-  accessModes:
-    - ReadWriteMany
-  volumeName: calibre-web-config
-  resources:
-    requests:
-      storage: 1Gi
