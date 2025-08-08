@@ -1,4 +1,6 @@
 ---
+replicaCount: 0
+
 env:
   - name: PUID
     value: "100"
