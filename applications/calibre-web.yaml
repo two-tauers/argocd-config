@@ -18,9 +18,6 @@ spec:
     - repoURL: 'https://github.com/two-tauers/argocd-config'
       targetRevision: HEAD
       ref: values
-    - repoURL: 'https://github.com/two-tauers/argocd-config'
-      targetRevision: HEAD
-      path: applications/calibre-web-pvc.yaml
   project: services
   syncPolicy:
     automated:
