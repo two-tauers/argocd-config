@@ -22,3 +22,11 @@ resources:
   requests:
     cpu: 100m
     memory: 128Mi
+
+ingress:
+  enabled: true
+  hosts:
+    - host: calibre.home
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
