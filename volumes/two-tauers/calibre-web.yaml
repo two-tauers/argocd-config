@@ -19,6 +19,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: calibre-web-library
+  namespace: services
 spec:
   storageClassName: ""
   accessModes:
@@ -33,6 +34,7 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: calibre-web-config
+  namespace: services
 spec:
   capacity:
     storage: 800Gi
