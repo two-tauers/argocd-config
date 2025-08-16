@@ -21,6 +21,8 @@ config:
       retry_on_failure:
         enabled: true
       start_at: end
+    k8s_cluster:
+      collection_interval: 60s
     prometheus:
       config:
         scrape_configs:
@@ -111,6 +113,7 @@ config:
       metrics:
         receivers:
           - prometheus
+          - k8s_cluster
         processors:
           - memory_limiter
           - k8sattributes
