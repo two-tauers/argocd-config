@@ -9,4 +9,4 @@ metadata:
 stringData:
   enableOCI: "true"
   type: helm
-  url: oci://ghcr.io/actions/
+  url: ghcr.io/actions/actions-runner-controller-charts
