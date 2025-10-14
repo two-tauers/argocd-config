@@ -11,9 +11,9 @@ spec:
   description: Github actions runners and their controller
   destinations:
     - name: two-tauers
-      namespace: github-runner-controller
+      namespace: actions-runner-controller
     - name: two-tauers
-      namespace: github-runner-set
+      namespace: actions-runner-set
   namespaceResourceWhitelist:
     - group: '*'
       kind: '*'
