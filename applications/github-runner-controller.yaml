@@ -1,0 +1,27 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: github-runner-controller
+spec:
+  destination:
+    name: two-tauers
+    namespace: github-runner-controller
+  sources:
+    - repoURL: "ghcr.io/actions/actions-runner-controller-charts"
+      targetRevision: 0.12.1
+      chart: github-runner-controller
+      helm:
+        releaseName: github-runner-controller
+        valueFiles:
+          - $values/applications/github-runner-controller-values.yaml
+    - repoURL: 'https://github.com/two-tauers/argocd-config'
+      targetRevision: HEAD
+      ref: values
+  project: github-actions
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
