@@ -1,0 +1,10 @@
+---
+githubConfigUrl: "https://github.com/two-tauers"
+
+# https://docs.github.com/en/actions/tutorials/use-actions-runner-controller/authenticate-to-the-api#authenticating-arc-with-a-github-app
+# kubectl create secret generic two-tauers-self-hosted-github-app
+#    --namespace=actions-runner-set
+#    --from-literal=github_app_id=2116
+#    --from-literal=github_app_installation_id=90031550
+#    --from-literal=github_app_private_key='$(cat ../two-tauers-selfhosted-runners.2025-10-14.private-key.pem)'
+githubConfigSecret: generic two-tauers-self-hosted-github-app

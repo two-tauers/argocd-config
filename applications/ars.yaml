@@ -2,19 +2,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: arc
+  name: ars
 spec:
   destination:
     name: two-tauers
-    namespace: actions-runner-controller
+    namespace: actions-runner-set
   sources:
     - repoURL: ghcr.io/actions/actions-runner-controller-charts
       targetRevision: 0.12.1
-      chart: gha-runner-scale-set-controller
+      chart: gha-runner-scale-set
       helm:
-        releaseName: arc
+        releaseName: ars
         valueFiles:
-          - $values/applications/arc-values.yaml
+          - $values/applications/ars-values.yaml
     - repoURL: "https://github.com/two-tauers/argocd-config"
       targetRevision: HEAD
       ref: values
