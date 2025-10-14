@@ -18,6 +18,6 @@ spec:
     - group: '*'
       kind: '*'
   sourceRepos:
-    - oci://ghcr.io/actions/actions-runner-controller-charts
+    - ghcr.io/actions/actions-runner-controller-charts #oci
     - https://github.com/two-tauers/argocd-config
 status: {}
