@@ -7,4 +7,8 @@ githubConfigUrl: "https://github.com/two-tauers"
 #    --from-literal=github_app_id=2116
 #    --from-literal=github_app_installation_id=90031550
 #    --from-literal=github_app_private_key='$(cat ../two-tauers-selfhosted-runners.2025-10-14.private-key.pem)'
-githubConfigSecret: generic two-tauers-self-hosted-github-app
+githubConfigSecret: two-tauers-self-hosted-github-app
+
+controllerServiceAccount:
+  namespace: actions-runner-controller
+  name: arc-gha-rs-controller
