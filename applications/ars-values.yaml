@@ -12,3 +12,6 @@ githubConfigSecret: two-tauers-self-hosted-github-app
 controllerServiceAccount:
   namespace: actions-runner-controller
   name: arc-gha-rs-controller
+
+maxRunners: 4
+minRunners: 1
