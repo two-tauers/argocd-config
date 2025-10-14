@@ -8,9 +8,9 @@ spec:
     name: two-tauers
     namespace: github-runner-controller
   sources:
-    - repoURL: "ghcr.io/actions/actions-runner-controller-charts"
+    - repoURL: ghcr.io/actions/actions-runner-controller-charts
       targetRevision: 0.12.1
-      chart: github-runner-controller
+      chart: gha-runner-scale-set-controller
       helm:
         releaseName: github-runner-controller
         valueFiles:
