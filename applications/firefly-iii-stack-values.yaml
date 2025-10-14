@@ -1,0 +1,22 @@
+---
+firefly-db:
+  enabled: true
+  storage:
+    existingClaim: ""
+  configs:
+    TZ: Europe/London
+
+firefly-iii:
+  # -- Set to false to not deploy Firefly III
+  enabled: true
+  config:
+    env:
+      DB_HOST: ""
+      DEFAULT_LANGUAGE: "en_US"
+      DEFAULT_LOCALE: "equal"
+      TZ: "Europe/Amsterdam"
+      TRUSTED_PROXIES: "**"
+
+importer:
+  # -- Set to false to not deploy the importer
+  enabled: true

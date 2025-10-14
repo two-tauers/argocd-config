@@ -1,0 +1,27 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: firefly-iii-stack
+spec:
+  destination:
+    name: firefly-iii-stack
+    namespace: services
+  sources:
+    - repoURL: "https://firefly-iii.github.io/kubernetes"
+      targetRevision: 0.9.0
+      chart: firefly-iii-stack
+      helm:
+        releaseName: firefly-iii-stack
+        valueFiles:
+          - $values/applications/firefly-iii-stack-web-values.yaml
+    - repoURL: 'https://github.com/two-tauers/argocd-config'
+      targetRevision: HEAD
+      ref: values
+  project: services
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
