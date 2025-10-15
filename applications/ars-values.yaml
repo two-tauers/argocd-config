@@ -1,5 +1,7 @@
 ---
 runnerScaleSetName: two-tauers
+runnerGroup: two-tauers
+
 githubConfigUrl: "https://github.com/two-tauers"
 
 # https://docs.github.com/en/actions/tutorials/use-actions-runner-controller/authenticate-to-the-api#authenticating-arc-with-a-github-app
