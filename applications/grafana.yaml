@@ -1,0 +1,27 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: grafana
+spec:
+  destination:
+    name: two-tauers
+    namespace: grafana
+  sources:
+    - repoURL: "https://grafana-community.github.io/helm-charts"
+      targetRevision: 12.10.4
+      chart: grafana
+      helm:
+        releaseName: grafana
+        valueFiles:
+          - $values/applications/grafana-values.yaml
+    - repoURL: 'https://github.com/two-tauers/argocd-config'
+      targetRevision: HEAD
+      ref: values
+  project: grafana
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true

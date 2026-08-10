@@ -1,0 +1,41 @@
+---
+ingress:
+  enabled: true
+  hosts:
+    - host: grafana.two-tauers.net
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+
+resources:
+ requests:
+   cpu: 100m
+   memory: 256Mi
+ limits:
+   cpu: 250m
+   memory: 256Mi
+
+persistence:
+  enabled: true
+  type: pvc
+  existingClaim: grafana
+
+datasources: {}
+#  datasources.yaml:
+#    apiVersion: 1
+#    datasources:
+#    - name: Prometheus
+#      type: prometheus
+#      url: http://prometheus-prometheus-server
+#      access: proxy
+#      isDefault: true
+#    - name: CloudWatch
+#      type: cloudwatch
+#      access: proxy
+#      uid: cloudwatch
+#      editable: false
+#      jsonData:
+#        authType: default
+#        defaultRegion: us-east-1
+#    deleteDatasources: []
+#    - name: Prometheus

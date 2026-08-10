@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: grafana
+  namespace: grafana
+spec:
+  storageClassName: ""
+  accessModes:
+    - ReadWriteMany
+  volumeName: grafana
+  resources:
+    requests:
+      storage: 1Gi
