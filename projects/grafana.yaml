@@ -1,0 +1,21 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: grafana
+  namespace: grafana
+spec:
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  description: Grafana and its datasources
+  destinations:
+    - name: two-tauers
+      namespace: grafana
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
+  sourceRepos:
+    - https://grafana-community.github.io/helm-charts
+    - https://charts.min.io/
+status: {}
