@@ -28,7 +28,7 @@ resources:
 ingress:
   enabled: true
   hosts:
-    - host: calibre.two-tauers.net
+    - host: calibre.tt.local
       paths:
         - path: /
           pathType: ImplementationSpecific

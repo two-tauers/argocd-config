@@ -2,7 +2,7 @@
 ingress:
   enabled: true
   hosts:
-    - host: grafana.two-tauers.net
+    - host: grafana.tt.local
       paths:
         - path: /
           pathType: ImplementationSpecific
