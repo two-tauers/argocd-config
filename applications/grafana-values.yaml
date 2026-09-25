@@ -1,11 +1,10 @@
 ---
 ingress:
   enabled: true
+  path: /
+  pathType: ImplementationSpecific
   hosts:
-    - host: grafana.tt.local
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
+    - grafana.tt.local
 
 resources:
  requests:
