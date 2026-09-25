@@ -17,7 +17,7 @@ resources:
 persistence:
   enabled: true
   type: pvc
-  existingClaim: grafana
+  storageClassName: local-path
 
 datasources: {}
 #  datasources.yaml:
