@@ -16,6 +16,7 @@ spec:
     - group: '*'
       kind: '*'
   sourceRepos:
+    - https://github.com/two-tauers/argocd-config
     - https://grafana-community.github.io/helm-charts
     - https://charts.min.io/
 status: {}
